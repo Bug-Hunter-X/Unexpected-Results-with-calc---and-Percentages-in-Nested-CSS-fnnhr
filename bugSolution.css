@@ -1,0 +1,27 @@
+One approach to solve the problem is to use explicit widths for parent elements:
+
+```css
+.parent {
+  width: 500px; /* Explicit width */
+}
+
+.child {
+  width: calc(50% + 20px);
+}
+```
+
+Now, `50%` is calculated relative to the `500px` width of the parent, resulting in predictable behaviour. 
+
+Another approach is to avoid percentage-based calculations altogether within `calc()` in contexts where parent widths are dynamic:
+
+```css
+.parent {
+  width: 50%;
+}
+
+.child {
+  width: 270px; /* Fixed width instead of calculation */
+}
+```
+
+Choosing the right approach depends on the specific context of the layout.
