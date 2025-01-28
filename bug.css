@@ -1,0 +1,13 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, using it with percentages can sometimes lead to unexpected results, especially when dealing with nested elements or complex layouts.  For example:
+
+```css
+.parent {
+  width: 50%;
+}
+
+.child {
+  width: calc(50% + 20px);
+}
+```
+
+In this case, `calc(50% + 20px)` calculates 50% of the *parent's* width and adds 20px to it.  If the parent doesn't have a defined width (or inherits one that is complex), this can produce unexpected outcomes, resulting in elements overflowing their containers or rendering improperly.
